@@ -13,7 +13,7 @@ public class HistogramDisplay extends ApplicationFrame{
     public HistogramDisplay(String title) {
         super("HISTOGRAM");
         setContentPane(createPanel());
-        pack();
+        pack(); // para poner la ventana agrandada directamente
     }
     
     private ChartPanel createPanel(){
@@ -27,15 +27,18 @@ public class HistogramDisplay extends ApplicationFrame{
                                                         "Dominios",
                                                         "Nº Emails",
                                                         dataset,
-                                                        PlotOrientation.VERTICAL,false,false,false);
+                                                        PlotOrientation.VERTICAL,true,false,false);
         return chart;
     }
     
     private DefaultCategoryDataset createDataset (){
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(10, "", "gmail.com");
-        dataset.addValue(7, "", "ulpgc.es");
-        dataset.addValue(5, "", "hotmail.com");
+        dataset.addValue(10, "ENE", "gmail.com");
+        dataset.addValue(7, "ENE", "ulpgc.es");
+        dataset.addValue(5, "ENE", "hotmail.com");
+        dataset.addValue(10, "FEB", "gmail.com");
+        dataset.addValue(7, "FEB", "ulpgc.es");
+        dataset.addValue(5, "FEB", "hotmail.com");
         return dataset;
     }
 
